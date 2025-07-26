@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Wisdom - Plant Benefits Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="floating-particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <span class="logo-icon" role="img" aria-label="Leaf">🌿</span> 
+      Green Wisdom
+    </div>
+    <input type="checkbox" id="menu-toggle"/>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="nav-links">
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="benefits.html">Benefits</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1 class="typewriter">Discover Nature's Wisdom</h1>
+    <p class="subtitle">Unveil the wonders, benefits, and uses of amazing plants that transform our world.</p>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80"
+         alt="Beautiful natural landscape with mountains and forest" class="hero-image"/>
+    <div class="cta-buttons">
+      <a href="articles.html" class="cta-btn cta-primary">
+        <span>🌱</span> Explore Plants
+      </a>
+      <a href="benefits.html" class="cta-btn cta-secondary">
+        <span>📚</span> Learn More
+      </a>
+    </div>
+  </header>
+
+  <!-- About Green Wisdom -->
+  <section class="about-section">
+    <h2 class="fade-in-on-scroll">About Green Wisdom</h2>
+    <p>Green Wisdom is dedicated to sharing the beauty, benefits, and wisdom of the plant world. Our mission is to inspire a deeper connection with nature and empower everyone to grow, care for, and appreciate plants in their daily lives.</p>
+  </section>
+
+  <!-- Featured Plant of the Week -->
+  <section class="featured-plant">
+    <h2 class="fade-in-on-scroll">🌟 Featured Plant of the Week</h2>
+    <div class="featured-plant-card">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=400&q=80" alt="Mint plant" style="width:220px;height:220px;object-fit:cover;border-radius:16px;box-shadow:0 4px 24px rgba(45,80,22,0.13);margin-bottom:1.5rem;">
+      <h3>Mint (Mentha)</h3>
+      <p>Mint is a refreshing herb known for its cooling flavor and aroma. It’s used in teas, desserts, and as a natural remedy for digestion and stress relief.</p>
+      <ul style="margin-top:1rem;">
+        <li>🌱 Easy to grow indoors and outdoors</li>
+        <li>🍃 Great for teas and drinks</li>
+        <li>🪴 Repels some pests naturally</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2 class="fade-in-on-scroll">What Our Community Says</h2>
+    <div class="testimonial-list">
+      <blockquote>“Green Wisdom helped me turn my apartment into a green oasis!”<br><span>- Jamie L.</span></blockquote>
+      <blockquote>“I never knew plants could be so easy and rewarding. Love the weekly tips!”<br><span>- Priya S.</span></blockquote>
+      <blockquote>“The featured plant section is my favorite. I learn something new every week.”<br><span>- Alex R.</span></blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Tips -->
+  <section class="quick-tips">
+    <h2 class="fade-in-on-scroll">Quick Plant Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">💧 Water most houseplants when the top inch of soil is dry.</div>
+      <div class="tip-card">🌞 Place sun-loving plants near south-facing windows.</div>
+      <div class="tip-card">🌱 Prune dead leaves to encourage new growth.</div>
+      <div class="tip-card">🪴 Repot plants every 1-2 years for healthy roots.</div>
+      <div class="tip-card">🐛 Check for pests regularly and act early.</div>
+      <div class="tip-card">🌿 Rotate your plants for even sunlight exposure.</div>
+    </div>
+  </section>
+
+  <!-- Social Feed Preview -->
+  <section class="social-feed">
+    <h2 class="fade-in-on-scroll">From Our Instagram</h2>
+    <div class="social-grid">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=300&q=80" alt="Aloe Vera" class="social-img">
+      <img src="https://images.unsplash.com/photo-1566158889236-cf8a3e8b8c23?fit=crop&w=300&q=80" alt="Lavender" class="social-img">
+      <img src="https://images.unsplash.com/photo-1519411028021-dc39ca5ca7d3?fit=crop&w=300&q=80" alt="Basil" class="social-img">
+      <img src="https://images.unsplash.com/photo-1544806503-e50ce9aea8fe?fit=crop&w=300&q=80" alt="Rosemary" class="social-img">
+    </div>
+    <p style="margin-top:1.2rem;">Follow us <b>@greenwisdom</b> for daily plant inspiration!</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2 class="fade-in-on-scroll">Ready to Grow Your Green Wisdom?</h2>
+    <a href="newsletter.html" class="cta-btn cta-primary" style="margin-top:1.5rem;">🌱 Join Our Newsletter</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
+      <div>
+        <h4 style="margin-bottom: 1rem; color: var(--accent-green);">Green Wisdom</h4>
+        <p style="opacity: 0.8;">Exploring the amazing world of plants and their incredible benefits for health, wellness, and our environment.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem; color: var(--accent-green);">Quick Links</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <a href="articles.html" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Featured Articles</a>
+          <a href="categories.html" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Plant Categories</a>
+          <a href="benefits.html" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Benefits Guide</a>
+          <a href="newsletter.html" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Newsletter</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem; color: var(--accent-green);">Follow Us</h4>
+        <div style="display: flex; gap: 1rem;">
+          <span style="cursor: pointer; font-size: 1.5rem;" title="Facebook">📘</span>
+          <span style="cursor: pointer; font-size: 1.5rem;" title="Instagram">📷</span>
+          <span style="cursor: pointer; font-size: 1.5rem;" title="Twitter">🐦</span>
+          <span style="cursor: pointer; font-size: 1.5rem;" title="YouTube">📺</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+      <p>© 2024 Green Wisdom • A celebration of plants and their wonders • Made with 💚 for nature lovers</p>
+    </div>
+  </footer>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingOverlay').classList.add('fade-out');
+      }, 1500);
+    });
+
+    // Floating Particles
+    function createFloatingParticles() {
+      const particles = document.getElementById('particles');
+      const particleEmojis = ['🌿', '🍃', '🌱', '🌸', '🌺', '🌻', '🌷'];
+      setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.textContent = particleEmojis[Math.floor(Math.random() * particleEmojis.length)];
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.fontSize = (Math.random() * 10 + 15) + 'px';
+        particles.appendChild(particle);
+        setTimeout(() => particle.remove(), 25000);
+      }, 3000);
+    }
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Counter Animation (for other pages)
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-count'));
+            const increment = target / 100;
+            let current = 0;
+            const updateCounter = () => {
+              if (current < target) {
+                current += increment;
+                counter.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target;
+              }
+            };
+            updateCounter();
+            observer.unobserve(counter);
+          }
+        });
+      });
+      counters.forEach(counter => observer.observe(counter));
+    }
+
+    // Intersection Observer for Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.8s ease both';
+        }
+      });
+    }, observerOptions);
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementsToAnimate = document.querySelectorAll('.plant-card, .hex-tile, .benefit-counters > div');
+      elementsToAnimate.forEach(el => observer.observe(el));
+      createFloatingParticles();
+      animateCounters();
+    });
+    // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+    // Parallax Effect on Scroll & Hero Fade
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero');
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+      // Fade out hero section as you scroll
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        const maxScroll = window.innerHeight * 0.7;
+        const opacity = Math.max(0, 1 - window.scrollY / maxScroll);
+        hero.style.opacity = opacity;
+      }
+    });
+    // Close mobile menu when clicking on links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu-toggle').checked = false;
+      });
+    });
+    // Add ripple effect to buttons
+    document.querySelectorAll('button, .cta-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        ripple.style.cssText = `
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          background: rgba(255,255,255,0.3);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s ease-out;
+          pointer-events: none;
+        `;
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+    // Add ripple animation
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+      @keyframes ripple {
+        to { transform: scale(2); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(rippleStyle);
+  </script>
+  <!-- Fade-in on scroll for .fade-in-on-scroll elements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+            entry.target.classList.add('visible');
+          } else if (entry.boundingClientRect.top < 0) {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+      fadeEls.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html> 
