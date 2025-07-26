@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Wisdom - Plant Articles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2d5f3f 0%, #4a7c59 50%, #7fb069 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(72, 123, 90, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo::before {
+            content: "🌿";
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #a8e6a1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2c5530;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .featured-article {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+            min-height: 400px;
+        }
+
+        .featured-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        .featured-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .newsletter-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 400px;
+            margin: 2rem auto 0;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Green Wisdom</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Plant Wisdom Articles</h1>
+        <p>Explore in-depth articles about the wonders of plants, their uses, and benefits.</p>
+    </section>
+
+    <div class="articles-container">
+        <div class="articles-grid">
+            <!-- Featured Article -->
+            <article class="article-card featured-article">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop" alt="Medicinal herbs" class="article-image">
+                <div class="featured-content">
+                    <span class="article-category">Featured</span>
+                    <h2 class="featured-title">The Ancient Art of Herbal Medicine</h2>
+                    <p class="featured-excerpt">Discover how traditional herbal remedies are making a comeback in modern healthcare. From turmeric's anti-inflammatory properties to the calming effects of chamomile, learn about nature's pharmacy that has been healing humanity for millennia.</p>
+                    <div class="article-meta">
+                        <span>📅 July 20, 2025</span>
+                        <span>⏱️ 8 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Regular Articles -->
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=250&fit=crop" alt="Indoor plants" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Home & Garden</span>
+                    <h3 class="article-title">Transform Your Home with Air-Purifying Plants</h3>
+                    <div class="article-meta">
+                        <span>📅 July 18, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <p class="article-excerpt">Learn about the best indoor plants that not only beautify your space but also clean the air you breathe. From snake plants to peace lilies, discover which green companions will thrive in your home.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1574263867128-a3d5c1b1decc?w=400&h=250&fit=crop" alt="Succulent garden" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Gardening</span>
+                    <h3 class="article-title">The Ultimate Guide to Succulent Care</h3>
+                    <div class="article-meta">
+                        <span>📅 July 15, 2025</span>
+                        <span>⏱️ 6 min read</span>
+                    </div>
+                    <p class="article-excerpt">Master the art of growing these drought-resistant beauties. Discover watering techniques, soil requirements, and propagation methods that will keep your succulents thriving year-round.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop" alt="Herbs in kitchen" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Cooking</span>
+                    <h3 class="article-title">Growing Your Own Kitchen Herb Garden</h3>
+                    <div class="article-meta">
+                        <span>📅 July 12, 2025</span>
+                        <span>⏱️ 4 min read</span>
+                    </div>
+                    <p class="article-excerpt">Fresh herbs can transform your cooking. Learn how to start and maintain a kitchen herb garden with basil, rosemary, thyme, and more. Perfect for beginners and small spaces.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Forest canopy" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Environment</span>
+                    <h3 class="article-title">How Trees Communicate: The Wood Wide Web</h3>
+                    <div class="article-meta">
+                        <span>📅 July 10, 2025</span>
+                        <span>⏱️ 7 min read</span>
+                    </div>
+                    <p class="article-excerpt">Explore the fascinating underground network that connects forest trees. Discover how trees share nutrients, send warning signals, and support each other through mycorrhizal networks.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1469796466635-455ede028aca?w=400&h=250&fit=crop" alt="Vegetable garden" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Organic Farming</span>
+                    <h3 class="article-title">Companion Planting: Nature's Perfect Partnerships</h3>
+                    <div class="article-meta">
+                        <span>📅 July 8, 2025</span>
+                        <span>⏱️ 6 min read</span>
+                    </div>
+                    <p class="article-excerpt">Discover which plants grow better together. Learn about natural pest control, soil enhancement, and maximizing garden space through strategic companion planting techniques.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop" alt="Medicinal plants" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Health</span>
+                    <h3 class="article-title">Adaptogenic Plants: Nature's Stress Busters</h3>
+                    <div class="article-meta">
+                        <span>📅 July 5, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <p class="article-excerpt">Learn about remarkable plants like ashwagandha, rhodiola, and ginseng that help your body adapt to stress. Understand their benefits and how to incorporate them into your wellness routine.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=400&h=250&fit=crop" alt="Tropical plants" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Exotic Plants</span>
+                    <h3 class="article-title">Unusual Plants That Will Amaze You</h3>
+                    <div class="article-meta">
+                        <span>📅 July 3, 2025</span>
+                        <span>⏱️ 6 min read</span>
+                    </div>
+                    <p class="article-excerpt">From carnivorous plants to resurrection plants, explore the most extraordinary members of the plant kingdom. Discover their unique adaptations and survival strategies.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+
+        <section class="newsletter-section">
+            <h2>Stay Updated with Plant Wisdom</h2>
+            <p>Get the latest articles about plants, gardening tips, and botanical discoveries delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Newsletter form handling
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing to Green Wisdom!');
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.article-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) rotateX(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotateX(0deg)';
+            });
+        });
+
+        // Hero fade-out on scroll
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const maxScroll = window.innerHeight * 0.7;
+                const opacity = Math.max(0, 1 - window.scrollY / maxScroll);
+                hero.style.opacity = opacity;
+            }
+            
+            // Parallax effect - content comes from above
+            const scrolled = window.pageYOffset;
+            const articlesContainer = document.querySelector('.articles-container');
+            if (articlesContainer) {
+                const speed = 0.3;
+                articlesContainer.style.transform = `translateY(${scrolled * speed}px)`;
+            }
+        });
+    </script>
+</body>
+</html> 
